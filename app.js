@@ -1,7 +1,7 @@
 // grab DOM elements
 
 // set event listeners on each button, do math, update DOM
-
+import { calculate } from './utilities.js';
 
 const addInputOne = document.getElementById('add-input-one');
 const addInputTwo = document.getElementById('add-input-two');
@@ -23,20 +23,19 @@ const divideInputTwo = document.getElementById('divide-input-two');
 const divideButton = document.getElementById('divide-button');
 const divisionResult = document.getElementById('division-result');
 
-
 addButton.addEventListener('click', () => {
-    additionResult.textContent = Number(addInputOne.value) + Number(addInputTwo.value);
+    additionResult.value = calculate(addInputOne.value, addInputTwo.value, 'add');
 });
 
 subtractButton.addEventListener('click', () => {
-    subtractionResult.textContent = Number(subtractInputOne.value) - Number(subtractInputTwo.value);
+    subtractionResult.textContent = calculate(subtractInputOne.value, subtractInputTwo.value, 'subtract');
 });
 
 multiplyButton.addEventListener('click', () => {
-    multiplicationResult.textContent = Number(multiplyInputOne.value) * Number(multiplyInputTwo.value);
+    multiplicationResult.textContent = calculate(multiplyInputOne.value, multiplyInputTwo.value, 'multiply');
 });
 
 divideButton.addEventListener('click', () => {
-    divisionResult.textContent = Number(divideInputOne.value) / Number(divideInputTwo.value);
+    divisionResult.textContent = calculate(divideInputOne.value, divideInputTwo.value, 'divide');
 });
 
