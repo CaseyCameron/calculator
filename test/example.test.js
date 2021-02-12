@@ -1,10 +1,10 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { add } from '../utilities.js';
-import { subtract } from '../utilities.js';
-import { multiply } from '../utilities.js';
-import { divide } from '../utilities.js';
-import { calculate } from '../utilities.js';
+import { add } from '../calculation.js';
+import { subtract } from '../calculation.js';
+import { multiply } from '../calculation.js';
+import { divide } from '../calculation.js';
+import { calculate } from '..calculation.jss';
 
 const test = QUnit.test;
 

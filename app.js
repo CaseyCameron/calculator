@@ -1,41 +1,23 @@
-// grab DOM elements
+import { add, subtract, multiply, divide, } from './calculation.js';
 
-// set event listeners on each button, do math, update DOM
-import { calculate } from './utilities.js';
+function getNumber(input){
+    return Number(input.value);
+}
 
-const addInputOne = document.getElementById('add-input-one');
-const addInputTwo = document.getElementById('add-input-two');
-const addButton = document.getElementById('add-button');
-const additionResult = document.getElementById('addition-result');
+function initOperator(firstInputId, secondInputId, buttonId, resultId, calculation){
+    const input1 = document.getElementById(firstInputId);
+    const input2 = document.getElementById(secondInputId);
+    const button = document.getElementById(buttonId);
+    const display = document.getElementById(resultId);
 
-const subtractInputOne = document.getElementById('subtract-input-one');
-const subtractInputTwo = document.getElementById('subtract-input-two');
-const subtractButton = document.getElementById('subtract-button');
-const subtractionResult = document.getElementById('subtraction-result');
+    button.addEventListener('click', () => {
+        display.value = calculation(getNumber(input1), getNumber(input2));
+        console.log(display.value);
+        console.log(resultId);
+    });
+}
 
-const multiplyInputOne = document.getElementById('multiply-input-one');
-const multiplyInputTwo = document.getElementById('multiply-input-two');
-const multiplyButton = document.getElementById('multiply-button');
-const multiplicationResult = document.getElementById('multiplication-result');
-
-const divideInputOne = document.getElementById('divide-input-one');
-const divideInputTwo = document.getElementById('divide-input-two');
-const divideButton = document.getElementById('divide-button');
-const divisionResult = document.getElementById('division-result');
-
-addButton.addEventListener('click', () => {
-    additionResult.value = calculate(addInputOne.value, addInputTwo.value, 'add');
-});
-
-subtractButton.addEventListener('click', () => {
-    subtractionResult.textContent = calculate(subtractInputOne.value, subtractInputTwo.value, 'subtract');
-});
-
-multiplyButton.addEventListener('click', () => {
-    multiplicationResult.textContent = calculate(multiplyInputOne.value, multiplyInputTwo.value, 'multiply');
-});
-
-divideButton.addEventListener('click', () => {
-    divisionResult.textContent = calculate(divideInputOne.value, divideInputTwo.value, 'divide');
-});
-
+initOperator('add-input-one', 'add-input-two', 'add-button', 'addition-result', add);
+initOperator('subtract-input-one', 'subtract-input-two', 'subtract-button', 'subtraction-result', subtract);
+initOperator('multiply-input-one', 'multiply-input-two', 'multiply-button', 'multiplication-result', multiply);
+initOperator('divide-input-one', 'divide-input-two', 'divide-button', 'division-result', divide);

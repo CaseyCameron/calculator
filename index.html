@@ -25,12 +25,12 @@
             <hr />
             <section>
                <div class = "wrapper">
-                    <input id="add-input-one">
-                    +
-                    <input id="add-input-two">
+                    <input id="add-input-one" type="number">
+                    <span class="operator">+</span>
+                    <input id="add-input-two" type="number">
                     <button id ="add-button">Add</button>
-                    =
-                    <div id ="addition-result">Result</div>
+                    <span class ="operator">=</span>
+                    <input id ="addition-result" readonly palceholder="Result">
                 </div>
 
                 <div class = "wrapper">
@@ -39,7 +39,7 @@
                     <input id="subtract-input-two">
                     <button id ="subtract-button">Subtract</button>
                     =
-                    <div id ="subtraction-result">Result</div>
+                    <input id ="subtraction-result" readonly palceholder="Result">
                 </div>
 
                 <div class = "wrapper">
@@ -48,7 +48,7 @@
                     <input id="multiply-input-two">
                     <button id ="multiply-button">Multiply</button>
                     =
-                    <div id ="multiplication-result">Result</div>
+                    <input id ="multiplication-result" readonly palceholder="Result">
                 </div>
 
                 <div class = "wrapper">
@@ -57,7 +57,7 @@
                     <input id="divide-input-two">
                     <button id ="divide-button">Divide</button>
                     =
-                    <div id ="division-result">Result</div>
+                    <input id ="division-result" readonly palceholder="Result">
                 </div>
 
                <!-- <div class = "calculation">
